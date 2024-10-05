@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from noteweb.models import addNote
+
 
 # Create your views here.
 def home(request):
@@ -28,4 +29,4 @@ def viewnt(request):
 def delete(request,param):
     d = addNote.objects.get(id=param)
     d.delete()
-    
+    return redirect('http://127.0.0.1:8000/viewNotes')

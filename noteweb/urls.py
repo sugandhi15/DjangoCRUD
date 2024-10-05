@@ -5,5 +5,5 @@ urlpatterns = [
     path("",views.home,name="home"),
     path("addNote",views.add,name="add"),
     path("viewNotes",views.viewnt,name="view"),
-    path("delete/<int:id>",views.delete,name="delete")
+    path("delete/<int:param>",views.delete,name="delete")
 ]

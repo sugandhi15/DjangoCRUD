@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Add note{% endblock title %}
+
+{% block body %}
+
+<div class="container my-4">
+    <br><br>
+    <h2 align="center"> Add Note </h2>
+<br>
+<form actiom="/index" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      {% comment %} <label for="exampleInputEmail1" class="form-label">Email address</label> {% endcomment %}
+      <input type="text" class="form-control" aria-describedby="emailHelp" name="username" placeholder="Name" style="height:50px">
+      {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+    </div>
+    <br>
+    <div class="mb-3">
+      {% comment %} <label for="exampleInputEmail1" class="form-label">Email address</label> {% endcomment %}
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Email" style="height:50px" >
+      {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+    </div>
+    <br>
+    <div class="mb-3">
+      {% comment %} <label for="exampleInputEmail1" class="form-label">Email address</label> {% endcomment %}
+      <input type="text" class="form-control" aria-describedby="emailHelp" name="title" placeholder="Title" style="height:50px" >
+      {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+    </div>
+    <br>
+    <div class="mb-3">
+      {% comment %} <label for="exampleInputEmail1" class="form-label">Email address</label> {% endcomment %}
+      <input type="text" class="form-control" aria-describedby="emailHelp" name="desc" placeholder="Description" style="height:60px" >
+      {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+    </div>
+    <br>
+    <div class="mb-3 form-check">
+    </div>
+    <button type="submit" class="btn btn-dark" style="margin-left: 37vw">Submit</button>
+  </form>
+
+  <a href="/viewNotes" > View Notes </a>
+</div>
+
+{% endblock body %}

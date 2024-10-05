@@ -1,6 +1,5 @@
 {% extends "base.html" %}
-
-{% block title %}Add note{% endblock title %}
+{% block title %}Add Note{% endblock title %}
 
 {% block body %}
 
@@ -8,29 +7,29 @@
     <br><br>
     <h2 align="center"> Add Note </h2>
 <br>
-<form actiom="/index" method="put">
+<form actiom="/update" method="post">
     {% csrf_token %}
     <div class="mb-3">
       {% comment %} <label for="exampleInputEmail1" class="form-label">Email address</label> {% endcomment %}
-      <input type="text" class="form-control" aria-describedby="emailHelp" name="username" placeholder="Name" style="height:50px">
+      <input type="text" class="form-control" aria-describedby="emailHelp" name="username" value={{note.username}} placeholder="Name" style="height:50px">
       {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
     </div>
     <br>
     <div class="mb-3">
       {% comment %} <label for="exampleInputEmail1" class="form-label">Email address</label> {% endcomment %}
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Email" style="height:50px" >
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={{note.email}} name="email" placeholder="Email" style="height:50px" >
       {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
     </div>
     <br>
     <div class="mb-3">
       {% comment %} <label for="exampleInputEmail1" class="form-label">Email address</label> {% endcomment %}
-      <input type="text" class="form-control" aria-describedby="emailHelp" name="title" placeholder="Title" style="height:50px" >
+      <input type="text" class="form-control" aria-describedby="emailHelp" name="title" value={{note.title}} placeholder="Title" style="height:50px" >
       {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
     </div>
     <br>
     <div class="mb-3">
       {% comment %} <label for="exampleInputEmail1" class="form-label">Email address</label> {% endcomment %}
-      <input type="text" class="form-control" aria-describedby="emailHelp" name="desc" placeholder="Description" style="height:60px" >
+      <input type="text" class="form-control" aria-describedby="emailHelp" name="desc" value={{note.desc}} placeholder="Description" style="height:60px" >
       {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
     </div>
     <br>

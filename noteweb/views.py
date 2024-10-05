@@ -14,7 +14,7 @@ def add(request):
         desc=request.POST.get('desc')
         note = addNote(username=username,email=email,title=title,desc=desc)
         note.save()
-
+        return redirect("http://127.0.0.1:8000/viewNotes")
 
     return render(request,'index.html')
 
@@ -25,6 +25,19 @@ def viewnt(request):
     }
     return render(request,'viewnotes.html',context)
 
+def edit(request,param):
+    if request.method=='POST':
+        note = addNote.objects.get(id=param)
+        note.username = request.POST.get("username")
+        note.email = request.POST.get("email")
+        note.title = request.POST.get("title")
+        note.desc = request.POST.get("desc")
+        note.save()
+        return redirect("http://127.0.0.1:8000/viewNotes")
+    context = {
+        'note': addNote.objects.get(id=param)
+    }
+    return render(request,'update.html',context)
 
 def delete(request,param):
     d = addNote.objects.get(id=param)

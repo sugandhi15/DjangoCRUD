@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
+# import environ,os
+
+# env = environ.Env()
+# environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)#=27c^s=!4a#sh%3^)mh_)zix+ihmp#il1kpaxhqo6qcc3og$'
+SECRET_KEY = "django-insecure-)#=27c^s=!4a#sh%3^)mh_)zix+ihmp#il1kpaxhqo6qcc3og$"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,6 +84,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# database_url=env("DATABASE_URL")
+DATABASES['default'] = dj_database_url.parse("postgresql://note_adding_website_user:Ja1CTXtMnS7j8zagoNCsjJ4pmvBxhjwa@dpg-cs0h5jbtq21c73ecrisg-a.oregon-postgres.render.com/note_adding_website")
 
 
 # Password validation

@@ -85,8 +85,8 @@ DATABASES = {
     }
 }
 
-# database_url=env("DATABASE_URL")
-DATABASES['default'] = dj_database_url.parse("postgresql://note_adding_website_user:Ja1CTXtMnS7j8zagoNCsjJ4pmvBxhjwa@dpg-cs0h5jbtq21c73ecrisg-a.oregon-postgres.render.com/note_adding_website")
+database_url=env("DATABASE_URL")
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 
 # Password validation

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import dj_database_url
 from pathlib import Path
-# import environ,os
+# import environ
 
 # env = environ.Env()
 # environ.Env.read_env()
@@ -85,8 +85,8 @@ DATABASES = {
     }
 }
 
-database_url=env("DATABASE_URL")
-DATABASES['default'] = dj_database_url.parse(database_url)
+# database_url=env("DATABASE_URL")
+DATABASES['default'] = dj_database_url.parse("postgresql://note_adding_website_user:Ja1CTXtMnS7j8zagoNCsjJ4pmvBxhjwa@dpg-cs0h5jbtq21c73ecrisg-a/note_adding_website")
 
 
 # Password validation

@@ -14,7 +14,7 @@ def add(request):
         desc=request.POST.get('desc')
         note = addNote(username=username,email=email,title=title,desc=desc)
         note.save()
-        return redirect("http://127.0.0.1:8000/viewNotes")
+        return redirect("https://mynote-hrx9.onrender.com/viewNotes")
 
     return render(request,'index.html')
 
@@ -33,7 +33,7 @@ def edit(request,param):
         note.title = request.POST.get("title")
         note.desc = request.POST.get("desc")
         note.save()
-        return redirect("http://127.0.0.1:8000/viewNotes")
+        return redirect("https://mynote-hrx9.onrender.com/viewNotes")
     context = {
         'note': addNote.objects.get(id=param)
     }
@@ -42,4 +42,4 @@ def edit(request,param):
 def delete(request,param):
     d = addNote.objects.get(id=param)
     d.delete()
-    return redirect('http://127.0.0.1:8000/viewNotes')
+    return redirect('https://mynote-hrx9.onrender.com/viewNotes')

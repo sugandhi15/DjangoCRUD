@@ -2,6 +2,7 @@
 {% block title %} View notes{% endblock title %}
 
 {% block body %}
+{% if data %}
 <div class="container">
     <h2 class="my-5">Your notes </h2>
     <div class="notes" style="display:flex ;flex-wrap:wrap">
@@ -20,7 +21,10 @@
   </div>
 <br>
 {% endfor %}
-<button href="/deleteall" type="button" class="btn btn-dark">Dark</button>
+<button href="/deleteall" type="button" class="btn btn-dark">Delete note</button>
 </div>
 </div>
+{% endif %}
+{% else %}
+<h2>please add note </h2>
 {% endblock body %}

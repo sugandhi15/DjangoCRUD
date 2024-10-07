@@ -5,6 +5,7 @@
 <div class="container">
     <h2 class="my-5">Your notes </h2>
     <div class="notes" style="display:flex ;flex-wrap:wrap">
+
 {% for d in data %}
 {% comment %} return a card {% endcomment %}
 
@@ -19,6 +20,7 @@
   </div>
 <br>
 {% endfor %}
+<button href="/deleteall" type="button" class="btn btn-dark">Dark</button>
 </div>
 </div>
 {% endblock body %}

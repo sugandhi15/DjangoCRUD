@@ -43,3 +43,7 @@ def delete(request,param):
     d = addNote.objects.get(id=param)
     d.delete()
     return redirect('https://mynote-hrx9.onrender.com/viewNotes')
+
+def deleteall(request):
+    addNote.objects.all().delete()
+    

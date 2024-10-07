@@ -25,6 +25,13 @@ def viewnt(request):
     }
     return render(request,'viewnotes.html',context)
 
+def viewSpecificNote(request,param):
+    data = addNote.objects.filter(id=param).values()
+    context={
+        'data':data
+    }
+    return render(request,'viewnotes.html',context)
+
 def edit(request,param):
     if request.method=='POST':
         note = addNote.objects.get(id=param)

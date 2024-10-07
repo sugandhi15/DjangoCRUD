@@ -30,7 +30,7 @@ def viewSpecificNote(request,param):
     context={
         'data':data
     }
-    return render(request,'viewnotes.html',context)
+    return render(request,'viewspecificnote.html',context)
 
 def edit(request,param):
     if request.method=='POST':

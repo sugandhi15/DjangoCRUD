@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} View note{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <h2 class="my-5">Your note </h2>
+    <div class="notes" style="display:flex ;flex-wrap:wrap">
+
+{% comment %} {% for d in data %} {% endcomment %}
+{% comment %} return a card {% endcomment %}
+
+<div class="card mx-3 my-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"> {{d.title}}</h5>
+      {% comment %} <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> {% endcomment %}
+      <p class="card-text">{{d.desc}}</p>
+      <a href="/editNote/{{d.id}}" class="card-link">Edit</a>
+      <a href="/delete/{{d.id}}" class="card-link">Delete</a>
+    </div>
+  </div>
+<br>
+{% comment %} {% endfor %} {% endcomment %}
+</div>
+{% comment %} <button class="btn btn-dark"><a href="/deleteall" type="button" class="btn btn-dark">Delete note</a></button> {% endcomment %}
+</div>
+{% endblock body %}

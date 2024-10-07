@@ -25,8 +25,9 @@ def viewnt(request):
     }
     return render(request,'viewnotes.html',context)
 
-def viewSpecificNote(request,param):
-    data = addNote.objects.filter(id=param).values()
+def viewSpecificNote(request,pk):
+    data = addNote.objects.filter(id=pk).values()
+    print(data.title)
     context={
         'title':data.title,
         'desc':data.desc

@@ -46,4 +46,4 @@ def delete(request,param):
 
 def deleteall(request):
     addNote.objects.all().delete()
-    
+    return redirect('https')
